@@ -1,0 +1,1 @@
+escolha_inicial == 'O'
