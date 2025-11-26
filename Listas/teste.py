@@ -1,5 +1,5 @@
-lista = ['Gustavo', 'João', 'Rebeca']
-lista.append(['Tiago', 'Emilia'])
+lista = ["Gustavo", "João", "Rebeca"]
+lista.append(["Tiago", "Emilia"])
 indices = range(len(lista))
 
 for indice in indices:

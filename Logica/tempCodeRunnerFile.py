@@ -1,1 +1,0 @@
-escolha_inicial == 'O'

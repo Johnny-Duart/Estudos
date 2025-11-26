@@ -1,0 +1,5 @@
+Ola mundo!
+Python
+escrevendoumtexto
+espaçamento automatico isso é um teste
+eu estou escrevendo dentro do writelines

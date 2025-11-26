@@ -1,4 +1,4 @@
-'''def dizer_oi(nome):
+"""def dizer_oi(nome):
     return f'oi {nome}'
 
 
@@ -6,19 +6,21 @@ def mensagem(nome):
     return nome('jonathan')
 
 
-print(mensagem(dizer_oi))'''
+print(mensagem(dizer_oi))"""
 
-def meu_decorador(funcao, nome='Jonathan'):
+
+def meu_decorador(funcao, nome="Jonathan"):
     def envelope():
-        print('Inicio')
+        print("Inicio")
         funcao()
-        print('fim')
+        print("fim")
+
     return envelope
 
 
 @meu_decorador
-def diga_ola(nome='jonathan'):
-    print(f'Ola! {nome}')
+def diga_ola(nome="jonathan"):
+    print(f"Ola! {nome}")
 
 
 diga_ola()

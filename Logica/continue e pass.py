@@ -4,7 +4,7 @@ for x in range(10):
     print(x)
 
 if x == 5:
-# se nao tiver "pass" aqui, ele vai dar erro de identação pois o print esta fora do if
-# dito isso o "Pass" funciona para ignorar algo, o continue é para pular
+    # se nao tiver "pass" aqui, ele vai dar erro de identação pois o print esta fora do if
+    # dito isso o "Pass" funciona para ignorar algo, o continue é para pular
     pass
-print("Ola mundo")  
+print("Ola mundo")

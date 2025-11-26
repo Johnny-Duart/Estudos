@@ -1,3 +1,3 @@
 size = int(input("Diga o tamanho do peito: "))
-x = ' ' * size
+x = " " * size
 print(f"({x}.{x})({x}.{x})")

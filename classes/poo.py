@@ -1,12 +1,12 @@
 class Escola:
-    escola = 'DIO'
+    escola = "DIO"
 
     def __init__(self, aluno, matricula):
         self.aluno = aluno
         self.matricula = matricula
 
     def __str__(self):
-        return f'{self.aluno}, {self.matricula}, {self.escola}'
+        return f"{self.aluno}, {self.matricula}, {self.escola}"
 
 
 def mostrar_valores(*objs):
@@ -14,16 +14,16 @@ def mostrar_valores(*objs):
         print(obj)
 
 
-adolf = Escola('adolf', 20)
+adolfo = Escola("adolfo", 20)
 
-mostrar_valores(adolf)
+mostrar_valores(adolfo)
 
-adolf.aluno = 'Hitler'
+adolfo.aluno = "Jose"
 
-adolf.matricula = 3
+adolfo.matricula = 3
 
-Escola.escola = 'SuperSemen'
+Escola.escola = "SuperHeroi"
 
-hitler = Escola('Hitler', 3)
+jose = Escola("Adolfo", 3)
 
-mostrar_valores(adolf)
+mostrar_valores(adolfo)

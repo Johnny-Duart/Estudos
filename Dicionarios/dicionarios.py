@@ -1,39 +1,40 @@
 # importei a biblioteca sistema operacional
 import limpardef
-'''
+
+"""
 Listas; Coleção ordenada, mutavel e permite valores duplicados
 Tuplas; Coleção ordenada, imutavel e permite valores duplicados
 Dicionarios; Coleção nao ordenada, mutavel e nao permite valores duplicados
-'''
+"""
 # sintaxes de listas e tuplas:
 # index      0           1           2
-lista = ['exemplo1', 'exemplo2', 'exemplo3']
-tupla = 'exemplo1', 'exemplo2', 'exemplo3'
+lista = ["exemplo1", "exemplo2", "exemplo3"]
+tupla = "exemplo1", "exemplo2", "exemplo3"
 print(lista, tupla)
 
 # sintaxe de dicionarios:
 # Chave:valor
-dicio = {'chave1': 'teste', 'chave2': 'daniel', 'chave3': 1999, 'chave4': True}
+dicio = {"chave1": "teste", "chave2": "daniel", "chave3": 1999, "chave4": True}
 print(dicio)
 
 dicionario = {
-    'nome': 'Joao',
-    'idade': 18,
-    'Altura': 1.80,
+    "nome": "Joao",
+    "idade": 18,
+    "Altura": 1.80,
 }
 # duplicamos a key 'idade'
-print(dicionario['Altura'], type(dicionario['Altura']))
+print(dicionario["Altura"], type(dicionario["Altura"]))
 # retorna o valor 'altura'
 
-print(dicionario.get('nome'))
+print(dicionario.get("nome"))
 # get é muito usado quando tu nao sabe se a key existe, por exemplo se a chave
 # 'nome' nao existir é possivel criar uma mensagem de retorno como:
-print(dicionario.get('sobrenome', 'nao key "sobrenome" existe'))
+print(dicionario.get("sobrenome", 'nao key "sobrenome" existe'))
 # ele vai printar o segundo valor pois nao existe a key sobrenome
 # isso torna bem melhor pois voce pode fazer programas que conferem se existe
 # evitando erros no codigo
 
-print(dicionario.get('idade'))
+print(dicionario.get("idade"))
 # mas ela retorna so o ultimo valor, no caso ela foi reescrita
 
 print(dicionario.keys())
@@ -47,7 +48,7 @@ print(dicionario.values())
 
 print(len(dicionario.values()))
 
-if 'nome' in dicionario:
+if "nome" in dicionario:
     print('funcionando, "nome" existe.')
 # dicionario tambem sao conhecidos como mapas
 
@@ -58,28 +59,23 @@ limpardef.limpa()
 
 # aula 2
 
-dicio = {
-    'nome': 'legolas',
-    'idade': 20,
-    'altura': 1.74,
-    'valor_logico': True
-}
+dicio = {"nome": "legolas", "idade": 20, "altura": 1.74, "valor_logico": True}
 
 # eu alterei o valor da key 'nome' porem da para adicionar elementos tambem
-dicio['nome'] = 'Pedro'
+dicio["nome"] = "Pedro"
 print(dicio)
 
 # eu adicionei um valor com update, sendo 'comida fav' a key e 'fezes' o valor
-dicio.update({'Comida Fav': 'fezes'})
+dicio.update({"Comida Fav": "fezes"})
 print(dicio)
 
-# eu adicionei uma key chamada 'tamanho do penis' com o valor de '4.5'
+# eu adicionei uma key chamada 'tamanho do dedo' com o valor de '4.5'
 # entao agora mostra a key e o valor
-dicio['tamanho do penis'] = 4.5
+dicio["tamanho do dedo"] = 4.5
 print(dicio)
 
 # essa mesma função tambem é possivel usar com o .update
-dicio.update({'Estado': 'Gozado'})
+dicio.update({"Estado": "Amado"})
 print(dicio)
 
 # para remover os valores e keys podemos usar o popitem
@@ -94,13 +90,13 @@ print(dicio)
 # em outras versões apaga um item aleatorio
 
 # com o uso da pop() a gente pode apagar um item especifico
-dicio.pop('nome')
+dicio.pop("nome")
 print(dicio)
 # com isso eu apaguei tanto a key quanto o valor
 # tambem podemos usar del
 
 # apagando a key 'comida fav' e o valor 'fezes'
-del dicio['Comida Fav']
+del dicio["Comida Fav"]
 print(dicio)
 # se usarmos del dicio['ALTURA'] que nao se encontra essa variavel
 # ele vai apresentar um erro pois o nome da variavel nao é esse
@@ -158,7 +154,7 @@ for x, y in dicio.items():
 # internos (listas/dicionários) são compartilhados.
 
 # faz a key 'idade' se tornar uma lista dentro do dicionario
-dicio.update({'idade': [10, 20]})
+dicio.update({"idade": [10, 20]})
 
 # copia exatamente o dicionario
 dicio1 = dicio.copy()
@@ -169,8 +165,8 @@ print(dicio)
 # outra forma de criar uma copia do dicionario é usando o dict
 diciocopia = dict(dicio)
 
-dicio['idade'].append(30)
-print(diciocopia, '\n')
+dicio["idade"].append(30)
+print(diciocopia, "\n")
 print(dicio)
 print(dicio1)
 print(diciocopia)
@@ -184,8 +180,8 @@ del dicio, dicio1, diciocopia, dicionario, lista, tupla, x, y
 limpardef.limpa()
 
 # index     0         1         2
-tupla1 = 'chave1', 'chave2', 'chave3'
-tupla2 = 'subchave1', 'subchave2', 'subchave3'
+tupla1 = "chave1", "chave2", "chave3"
+tupla2 = "subchave1", "subchave2", "subchave3"
 # força a tupla a trocar index por chaves, entao os index se tornam chaves
 dicio = dict.fromkeys(tupla1)
 print(dicio)
@@ -211,21 +207,9 @@ print(dicio)
 # podemos usar dicionarios dentro de dicionarios
 
 dicio = {
-    'dicio1': {
-        'nome': 'Julia',
-        'idade': 24,
-        'cidade': 'Pelotas'
-    },
-    'dicio2': {
-        'nome': 'Clayton',
-        'idade': 16,
-        'cidade': 'Rio Grande'
-    },
-    'dicio3': {
-        'nome': 'Amanda',
-        'idade': 19,
-        'cidade': 'Porto Alegre'
-    }
+    "dicio1": {"nome": "Julia", "idade": 24, "cidade": "Pelotas"},
+    "dicio2": {"nome": "Clayton", "idade": 16, "cidade": "Rio Grande"},
+    "dicio3": {"nome": "Amanda", "idade": 19, "cidade": "Porto Alegre"},
 }
 # com isso temos um dicionario com outro dicionario dentro
 
@@ -233,7 +217,7 @@ dicio = {
 print(dicio)
 
 # podemos printar so os valores de um dicionario dentro do dicionario:
-print(dicio['dicio1'])
+print(dicio["dicio1"])
 
 # tambem podemos printar somente um valor do dicionario dentro do dicionario:
-print(dicio['dicio1']['nome'])
+print(dicio["dicio1"]["nome"])

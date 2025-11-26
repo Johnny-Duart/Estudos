@@ -1,20 +1,20 @@
-'''conjunto_a = {1, 2, 3, 4}
+"""conjunto_a = {1, 2, 3, 4}
 conjunto_b = {2, 3, 4}
 conjuntointersecao = conjunto_a.intersection(conjunto_b)
 
 print(conjuntointersecao)
 conjuntoissubset = conjunto_a.issubset(conjunto_b)
-print(conjuntoissubset)'''
+print(conjuntoissubset)"""
 
-'''contatos = {
-    'super': {'semen': 'gozo'},
-    'gosto': {'penis': 'gozado'}
+"""contatos = {
+    'super': {'humano': 'cheiroso'},
+    'gosto': {'voador': 'coisado'}
 }
-contatos['cheiro'] = 'porra'
+contatos['cheiro'] = 'flores'
 print(contatos)
 
 contatos['sememail'] = {'nome': 'seunome', 'telefone': '3333-3333'}
-print(contatos)'''
+print(contatos)"""
 
 
 # contatos = {
@@ -43,11 +43,11 @@ print(contatos)'''
 
 # print('Telefone' in contatos['Nome'])
 
-'''def exibir_nome(nome):
+"""def exibir_nome(nome):
     print(f'ola mundo! ola {nome}')
 
-exibir_nome(nome= input('diga o nome: '))'''
-'''
+exibir_nome(nome= input('diga o nome: '))"""
+"""
 def calcula(numeros):
     return sum(numeros)
 
@@ -60,11 +60,13 @@ def retorna_ant_e_sucess(numero):
     print(ant, suc)
 
 
-retorna_ant_e_sucess(40)'''
+retorna_ant_e_sucess(40)"""
 
 
 def carro_selecionado(marca, modelo, ano, placa):
-    print(f'Carro selecionado com sucesso! {marca} {modelo} {ano} {placa}')
+    print(f"Carro selecionado com sucesso! {marca} {modelo} {ano} {placa}")
 
 
-carro_selecionado(**{'marca': 'fiat', 'modelo': 'uno', 'ano': 2010, 'placa': 'abc-1234'})
+carro_selecionado(
+    **{"marca": "fiat", "modelo": "uno", "ano": 2010, "placa": "abc-1234"}
+)

@@ -1,2 +1,0 @@
-correct = True
-print(correct)

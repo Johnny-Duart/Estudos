@@ -1,4 +1,18 @@
+"""
+A classe abstrata é uma "forma" de se fazer as classes
+no caso ela nao pode receber um objeto
+e sim ser "mae" de outras classes que terao esses objetos com essas funções
+
+nesse caso:
+o controle vai receber ABC e vai ser um molde para proximas classes
+e quando usamos o decorador @abstratcmethod
+estamos dizendo que para a classe filha funcionar ela tem que ter essa função no codigo
+se nao ela gera erro, mesmo que nao seja usada.
+
+"""
+
 from abc import ABC, abstractmethod
+
 
 class Controle_remoto(ABC):
     @abstractmethod
@@ -12,25 +26,26 @@ class Controle_remoto(ABC):
 
 class ControleTv(Controle_remoto):
     def ligar(self):
-        print('ligando')
-    
+        print("ligando")
+
     def desligar(self):
-        print('desligando')
+        print("desligando")
 
 
 class ControleAr(Controle_remoto):
     def ligar(self):
-        print('ligando')
+        print("ligando")
 
     def desligar(self):
-        print('desligando')
+        print("desligando")
 
 
 controle = ControleTv()
 controle.ligar()
+controle.desligar()
 
 
-'''class Animal:
+"""class Animal:
     def __init__(self, som):
         self.som = som
     
@@ -45,4 +60,4 @@ class Gato(Animal):
 
 gato = Gato()
 gato.fazer_som()
-'''
+"""

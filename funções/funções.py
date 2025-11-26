@@ -1,4 +1,5 @@
 import limpardef
+
 # paradigma imperativo, sao conhecido como tipos de programação. tempos a
 # programação orientada a objetos a programação imperativa ou paradigma
 # imperativo de forma adequada poque ela é basicamente natural sendo o mais
@@ -41,15 +42,17 @@ import limpardef
 # disso a palavra reservada para criar funções me python é 'def'
 
 # bloco externo (tambem conhecido como local)
-nome = 'Gabriel'
+nome = "Gabriel"
 # variavel global
 # no python no pip 8 as funções devem ser decladaras com 2 linhas de espaço
 # entre qualquer outra linha de codigo
 
 
 def minha_funcao():
-    nome = 'Ana'
+    nome = "Ana"
     print(nome)
+
+
 # bloco interno
 # bloco interno de uma função é conhecido como como corpo da função
 # atribuimos a variavel nome com um valor
@@ -76,14 +79,14 @@ lista = [1, 3, 5, 7, 9]
 print(lista)
 resto = lista.pop()
 print(lista)
-print(f'o retorno da função pop: {resto}')
-var1 = print('ola mundo')
+print(f"o retorno da função pop: {resto}")
+var1 = print("ola mundo")
 print(var1)
 # diz que a variavel 1 n tem valor, nao tem retorno
 
 
 def ola_mundo():
-    print('ola mundo')
+    print("ola mundo")
 
 
 ola_mundo()
@@ -94,7 +97,7 @@ limpardef.limpa()
 
 
 def ola_mundo():
-    return 'ola mundo'
+    return "ola mundo"
 
 
 ola_mundo()
@@ -111,4 +114,4 @@ print(ola_mundo())
 # porque um dos proposito da função é a retulização
 
 
-'''def par_impar():'''
+"""def par_impar():"""

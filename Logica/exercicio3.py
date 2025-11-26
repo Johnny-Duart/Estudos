@@ -1,6 +1,9 @@
 """01 - Escreva um programa que leia 5 valores e encontre o maior e o menor deles. Mostre o
- resultado"""
-n1, n2, n3, n4, n5 = map(int, input("Digite 5 números separados por espaço: ").split())
+resultado"""
+
+n1, n2, n3, n4, n5 = map(
+    int, input("Digite 5 números separados por espaço: ").split()
+)
 if n1 > n2 and (n1 > n3) and (n1 > n4) and (n1 > n5):
     print("n1 numero maior")
 elif n2 > n1 and n2 > n3 and n2 > n4 and n2 > n5:

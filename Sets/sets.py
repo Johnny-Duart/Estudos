@@ -1,24 +1,25 @@
 # importei a biblioteca sistema operacional
 import limpardef
-'''
+
+"""
 Listas; Coleção ordenada, mutavel e permite valores duplicados
 Tuplas; Coleção ordenada, imutavel e permite valores duplicados
 Dicionarios; Coleção nao ordenada, mutavel e nao permite valores duplicados
 Sets; Coleção nao ordenada, imutavel e nao permite valores duplicados
-'''
+"""
 # sets tambem sao conhecidos como conjuntos
 
 # a diferença entre dict e sets, é que a gente nao tem chaves aqui, so valores
 # entao eu nao preciso colocar 'chave': 'valor'
-conjunto = {'João', 'Clebin', 'Rafael'}
+conjunto = {"João", "Clebin", "Rafael"}
 print(type(conjunto))
 print(conjunto)
 # Nao tem ordem
 
 # se fizermos uma duplicata aqui ele simplesmente ignora
-conjunto = {'João', 'Clebin', 'Rafael'}
+conjunto = {"João", "Clebin", "Rafael"}
 print(len(conjunto))
-conjunto = {'João', 'Clebin', 'Rafael', 'João', 'Clebin', 'Rafael'}
+conjunto = {"João", "Clebin", "Rafael", "João", "Clebin", "Rafael"}
 print(len(conjunto))
 # o retorno continua sendo 3 pois ele ignora dados repetidos
 
@@ -37,13 +38,13 @@ conjunto = set((3, 2, 2, 1.5))
 print(conjunto)
 print(type(conjunto))
 
-conjunto = {'super', 'seio', 'amo', 'a', 'ayra'}
+conjunto = {"odeio", "a", "ayra"}
 
 
-'''conjunto.append('superseio')
+"""conjunto.append('super')
 print(conjunto)
 nao da para adicionar elementos, nem procurar pelo index
-'''
+"""
 # a unica forma de acessar os itens de um set (conjunto)
 # é printando ele por inteiro
 # tambem podemos usar um laço de repetição para acessar
@@ -52,7 +53,7 @@ nao da para adicionar elementos, nem procurar pelo index
 
 for x in conjunto:
     print(x)
-    if x == 'a':
+    if x == "a":
         break
 
 conjunto = {4, 5, 2, 1}
@@ -70,13 +71,13 @@ print(conj)
 conj.add(5)
 print(conj)
 conj1 = conj
-conj2 = {'elementos', 'do', 'segundo', 'conjunto'}
+conj2 = {"elementos", "do", "segundo", "conjunto"}
 conj1.update(conj2)
 print(conj1)
 
 # adicionei conj2 no conj1
 
-conj1.update((1, 2, 3, 10, 12, 'conjunto'))
+conj1.update((1, 2, 3, 10, 12, "conjunto"))
 print(conj1)
 # adicionei elementos separados no conj1, alem de mostrar que nao se repetem
 
@@ -86,13 +87,13 @@ print(conj1)
 conj1.pop()
 print(conj1)
 
-conj1.remove('elementos')
+conj1.remove("elementos")
 print(conj1)
 # com remove da para falar qual elemento vai ser removido. diferente do pop
 
 
 conj1.discard("do")
-conj1.discard('elemento inexistente')
+conj1.discard("elemento inexistente")
 print(conj1)
 # igual o remove, porem a diferença é que se tentar remover algum elemento
 # que nao existe, ele nao retorna erro

@@ -1,28 +1,36 @@
+"""
+Em nossa aplicação financeira, identificamos a necessidade de rastrear e
+auditar as ações dos usuarios para garantir a segurança e a integridade das
+operações. O console tem sido util ate agora, mas a quantidade crescente das
+operações de atividades torna dificil aocmpnhar todas as operações em tempo
+real. Portanto decidimos que é vital registrar essas informações em um arquivo
+para analise posterior e backup continuoo
+
+Objetivo:
+Modificar o atual decorador de log, que imprime informações no console, para
+que ele salve essas informações em um arquivo de log, possibilitanto a revisao
+mais facil em uma analise detalhada das operações dos usuarios
+
+O decoradro deve registrar o seguinte para cada chamada da função
+1 data e horas atuais
+2 nome da função
+3 argumentos da função
+4 valor retornado pela função
+5 o aqruivo de log deve ser chamado log.txt
+6 se o arquivo log.txt ja existir, os novos logs devem ser adicionados ao
+final do arquivo (ou seja manter o historico e adicionar no final do arquivo a
+nova operação)
+7 cada entrada de log deve estar em uma nova linha
+"""
+
 import textwrap
 from abc import ABC, abstractmethod
 from datetime import datetime
+from pathlib import Path
+
 import pytz
 
-'''deve ser ser possivel depositar valores POSITIVOS
-a V1 trabalha apenas com 1 usuario
-(nao precisamos identificar o numero da agencia)
-todos os depositos devem ser armazenados em uma variavel
-
-o sistema deve permitir apenas 3 saques por dia
-com um limite de 500 reais por saque
-se o usuario nao tiver dinheiro exibir uma mensagem
-todos os saques devem ser armazenados em uma variavel e exibidos na operação
-
-operação extrato deve exibir todos os depositos e saques realizados na conta
-no fim da listagem deve ser exibido o saldo atual da conta
-os valores devem ser exibidos no formato R$xxxx.xx'''
-
-'''
-continuando o desafio:
-estabelecer um limite max de 10 transações por dia!
-se o usuario tentar exceder o limite aparecer uma mensagem informando que nao
-é possivel fazer transação naquele dia
-'''
+ROOT_PATH = Path(__file__).parent
 
 
 class ContasIterador:
@@ -70,6 +78,9 @@ class PessoaFisica(Cliente):
         self.nome = nome
         self.data_nascimento = data_nascimento
         self.cpf = cpf
+
+    def __repr__(self) -> str:
+        return f"<{self.__class__.__name__}: ('{self.nome}')('{self.cpf}')>"
 
 
 class Conta:
@@ -163,6 +174,9 @@ class ContaCorrente(Conta):
 
         return False
 
+    def __repr__(self):
+        return f"<{self.__class__.__name__}: ('{self.agencia}, {self.numero}, {self.cliente.nome}')>"
+
     def __str__(self):
         return f"""\n
         Agência:\t{self.agencia}
@@ -184,9 +198,9 @@ class Historico:
             {
                 "tipo": transacao.__class__.__name__,
                 "valor": transacao.valor,
-                "data": datetime.now(pytz.timezone("America/Sao_Paulo")).strftime(
-                    "%d-%m-%Y %H:%M:%S"
-                ),
+                "data": datetime.now(
+                    pytz.timezone("America/Sao_Paulo")
+                ).strftime("%d-%m-%Y %H:%M:%S"),
             }
         )
 
@@ -251,8 +265,21 @@ class Deposito(Transacao):
 
 def log_transacao(func):
     def envelope(*args, **kwargs):
+        data_hora = datetime.now(pytz.timezone("America/Sao_Paulo")).strftime(
+            "%d-%m-%Y %H:%M:%S"
+        )
         resultado = func(*args, **kwargs)
-        print(f"{datetime.now()}: {func.__name__.upper()}")
+        try:
+            with open(
+                ROOT_PATH / "log.txt", "a", encoding="utf-8", newline=""
+            ) as arquivo:
+                arquivo.write(
+                    f"[{data_hora}] Função '{func.__name__}' "
+                    f"executada com argumentos {args}. {kwargs}"
+                    f" retornou {resultado if resultado is not None else 'Sucesso'}\n"
+                )
+        except Exception as exc:
+            print(f"Ocorreu um erro {exc}")
         return resultado
 
     return envelope
@@ -429,4 +456,6 @@ def main():
 
 
 if __name__ == "__main__":
+    main()
+    main()
     main()
