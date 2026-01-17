@@ -22,4 +22,30 @@ num2 = int(input('digite um numero'))
 num3 = int(input('digite um numero'))
 print(max(num1,num2,num3))
 print(min(num1,num2,num3))
+
+numeros = input().split(",")
+lista_numeros = []
+for numero in numeros:
+    numero = int(numero)
+    if numero % 2 == 0:
+        lista_numeros.append(numero)
+
+print(lista_numeros)"""
+
+"""lista_palavras = ["python", "teste"]
+for palavras in lista_palavras:
+    palavras_numeradas = len(palavras)
+
+    dicionario = {}
+    dicionario[palavras] = palavras_numeradas"""
+# dicionario[palavras].append(palavras_numeradas)
+
+# print(dicionario)
+"""lista_nova = []
+lista = [[1, 2, 3], [4], 1]
+lista1 = lista[0]
+lista2 = lista[1]
+lista3 = lista[2]
+lista_nova.append(lista1)
+print(lista_nova)
 """

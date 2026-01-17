@@ -3,9 +3,15 @@ entrada = input()
 
 def extrair_dominios(emails):
     # Separa os emails por ponto e vírgula
+
     lista_emails = emails.split(";")
-    # TODO: Implemente a lógica necessária para extrair os domínios
-    dominios = [emails.split("@")[1] for email in lista_emails]
+    lista_dominios = []
+
+    for email in lista_emails:
+        dominio = email.split("@")[1]
+        lista_dominios.append(dominio)
+
+    dominios = lista_dominios
 
     return dominios
 
